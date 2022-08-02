@@ -1,9 +1,13 @@
 import { Fragment } from "react";
-import Home from "../../pages/Home/Home"
+import {Outlet} from "react-router-dom"
+import Header from "../HomeTemplate/Layout/Header/Header"
+import HomeCarousel from "./Layout/HomeCarousel/HomeCarousel";
 
 export const HomeTemplate = () => {
   return (
     <Fragment>
-    <h1> đây là header</h1>
+    <Header/>
+    <HomeCarousel/>
+    <Outlet/>
     <footer> đây là footer</footer>
   </Fragment> )};
