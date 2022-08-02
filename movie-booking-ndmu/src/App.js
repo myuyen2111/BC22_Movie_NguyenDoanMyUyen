@@ -1,13 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import {createBrowserHistory} from 'history';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { createBrowserHistory } from "history";
+import { HomeTemplate } from "./templates/HomeTemplate/HomeTemplate";
+import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
 export const history = createBrowserHistory();
 function App() {
   return (
-   <Router history={history}>
-    
-   </Router>
+    <>
+      <Routes>
+        <Route path="/" element={<HomeTemplate />}>
+        <Route index element={<Home />} />
+        </Route>
+
+      </Routes>
+    </>
   );
 }
 
