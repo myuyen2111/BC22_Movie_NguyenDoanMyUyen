@@ -6,7 +6,7 @@ export const history = createBrowserHistory();
 function App() {
   return (
    <Router history={history}>
-
+    
    </Router>
   );
 }
