@@ -17,7 +17,7 @@ export default function Header(props) {
           <li class="flex">
             <NavLink to ="/home"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
-            activeClassName="border-b-1">
+            activeClassName="border-b-1 border-white">
               Trang chủ
             </NavLink>
           </li>
@@ -26,7 +26,7 @@ export default function Header(props) {
               rel="noopener noreferrer"
               href="#"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              activeClassName="border-b-1">
+              activeClassName="border-b-1 border-white">
               Tin tức
             </NavLink>
           </li>
@@ -35,16 +35,16 @@ export default function Header(props) {
               rel="noopener noreferrer"
               href="#"
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              activeClassName="border-b-1">
+              activeClassName="border-b-1 border-white">
               Liên hệ
             </NavLink>
           </li>
         </ul>
         <div class="items-center flex-shrink-0 hidden lg:flex">
-          <button class="self-center px-8 py-3 rounded">Đăng nhập</button>
-          <button class="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">
+          <NavLink to="/login" className="self-center px-8 py-3 rounded">Đăng nhập</NavLink>
+          <NavLink to="/register" className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">
             Đăng ký
-          </button>
+          </NavLink>
         </div>
         <button class="p-4 lg:hidden">
           <svg

@@ -1,28 +1,39 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { useSelector, useDispatch } from "react-redux"
 import {Carousel} from 'antd'
+import { getCarouselAction } from "../../../../redux/actions/CarouselActions"
+import "./HomeCarousel.css";
 const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
+  height: "100vh",
+  backgroundSize: "100%",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
 };
 
 export default function HomeCarousel() {
+  const { arrImg } = useSelector((state) => state.CarouselReducer);
+  console.log(arrImg);
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCarouselAction());
+  }, [dispatch]);
+
+  const renderImg = () => {
+    return arrImg.map((item, index) => {
+      return (
+        <div key={index}>
+          <div
+            style={{ ...contentStyle, backgroundImage: `url(${item.hinhAnh})` }}
+          ></div>
+        </div>
+      );
+    });
+  };
+
   return (
-    <Carousel autoplay autoplaySpeed={7000}>
-    <div>
-      <h3 style={contentStyle}>1</h3>
+    <div className="relative">
+      <Carousel >{renderImg()}</Carousel>
     </div>
-    <div>
-      <h3 style={contentStyle}>2</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
-    </div>
-  </Carousel>
-  )
+  );
 }

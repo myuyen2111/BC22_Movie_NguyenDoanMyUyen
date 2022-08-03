@@ -4,11 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./redux/types/configStore";
+import {store} from "./redux/types/configStore";
 import { BrowserRouter } from "react-router-dom";
-//Ant.design
+// React Slick
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+//Ant design
 import 'antd/dist/antd.css';
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <Provider store={store}>
     <BrowserRouter>
