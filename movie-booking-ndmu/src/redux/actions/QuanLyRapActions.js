@@ -25,7 +25,6 @@ export const layThongTinChiTietPhim = (id) => {
   return async (dispatch) => {
     try {
       const result = await quanLyRapService.layThongTinLichChieuPhim(id);
-
       dispatch({
         type: SET_CHI_TIET_PHIM,
         filmDetail: result.data.content,

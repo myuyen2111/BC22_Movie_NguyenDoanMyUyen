@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { history } from "../../App";
 export default function Film(props) {
   const { phim } = props;
@@ -30,14 +31,13 @@ export default function Film(props) {
         {phim.tenPhim} 
       </h1>
 
-      <button
-        className="py-1 btn-booking bg-red-600 font-bold text-white text-xl rounded-md"
-        onClick={() => {
-          history.push(`/detail/${phim.maPhim}`);
-        }}
+      <NavLink to={`/details/${phim.maPhim}`}
+        className="py-1 btn-booking bg-red-600 font-bold text-white text-xl rounded-md text-center"
+
+        
       >
         ĐẶT VÉ
-      </button>
+      </NavLink>
     </div>
   );
 }

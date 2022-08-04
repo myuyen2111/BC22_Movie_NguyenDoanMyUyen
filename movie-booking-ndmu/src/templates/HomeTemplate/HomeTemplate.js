@@ -11,6 +11,5 @@ export const HomeTemplate = () => {
     <Fragment>
     <Header/>
     <Outlet/>
-    <HomeMenu/>
     <Footer/>
   </Fragment> )};

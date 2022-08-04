@@ -5,6 +5,7 @@ import {
     SET_FILM_SAP_CHIEU,
     SET_THONG_TIN_PHIM,
   } from "../types/QuanLyPhimType";
+  import { SET_CHI_TIET_PHIM } from "../types/QuanLyRapType";
 const stateDefault = {
     arrFilm: [
       {
@@ -59,6 +60,11 @@ const stateDefault = {
       }
       case SET_THONG_TIN_PHIM: {
         state.thongTinPhim = action.thongTinPhim;
+        return { ...state };
+      
+      }
+      case SET_CHI_TIET_PHIM: {
+        state.filmDetail = action.filmDetail;
         return { ...state };
       }
       default:

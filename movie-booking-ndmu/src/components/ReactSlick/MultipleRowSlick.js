@@ -36,11 +36,13 @@ function SampleNextArrow(props) {
         className: "center",
         centerMode: true,
         infinite: false,
-        centerPadding: "60px",
-        slidesToShow: 3,
+        centerPadding: "30px",
+        slidesToShow: 1,
         speed: 500,
-        rows: 4,
-        slidesPerRow: 2,
+        rows: 1,
+        slidesPerRow: 4,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
       };
     const [show, setShow] = useState(false);
     const [trailer, setTrailer] = useState("");
@@ -52,7 +54,7 @@ function SampleNextArrow(props) {
       return props.arrFilm.slice(0, 24).map((item, index) => {
         return (
           <div
-            className="mt-2 relative film "
+            className="mt-2 film relative"
             key={index}
             onClick={() => {
               setTrailer(item.trailer);
