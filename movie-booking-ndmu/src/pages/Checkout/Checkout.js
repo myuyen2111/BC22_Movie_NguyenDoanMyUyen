@@ -23,7 +23,7 @@ import moment from "moment";
 import { connection } from "../..";
 import { TOKEN, USER_LOGIN } from "../../util/settings/config";
 import { history } from "../../App";
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 
 function Checkout(props) {
   const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
@@ -157,8 +157,6 @@ function Checkout(props) {
                   <th>Đang đặt</th>
                   <th className="pl-5">VIP</th>
                   <th className="pl-2">Đã đặt</th>
-                  <th>Bạn đã đặt</th>
-                  <th>Khách khác đang đặt</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -309,13 +307,12 @@ export default function CheckoutTab(props) {
     <div className="ml-5">
       {!_.isEmpty(userLogin) ? (
         <div>
-          <button>
-            <HomeOutlined
-              className="text-xl mr-4 hover:text-success-400"
-              onClick={() => {
-                history.push("/home");
-              }}
-            />
+          <button className="  text-l mr-4 hover:text-success-400">
+            <NavLink
+              
+              to="/home">
+              Về trang chủ
+              </NavLink>
           </button>
           <Dropdown overlay={menu}>
             <button
@@ -402,14 +399,10 @@ function KetQuaDatVe() {
         <div className="container px-5  mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4  text-purple-600 ">
-              Lịch sử đặt vé của bạn
+              Lịch sử đặt vé
             </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Xem lại danh sách các vé đã đặt và thời gian để không bõ lỡ phút
-              giây nào của phim bạn nhé!
-            </p>
           </div>
-          <div className="flex flex-wrap -m-2">{renderTicketItem()}</div>
+          {/* <div className="flex flex-wrap -m-2">{renderTicketItem()}</div> */}
         </div>
       </section>
     </div>
