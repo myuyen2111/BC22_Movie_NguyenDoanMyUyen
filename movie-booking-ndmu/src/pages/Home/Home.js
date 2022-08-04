@@ -23,6 +23,7 @@ export default function Home() {
         <div className="container py-10 mx-auto ">
           <MultipleRowSlick arrFilm={arrFilm} />
         </div>
+        <h1 className="text-center text-3xl">CỤM RẠP & LỊCH CHIẾU</h1>
         <div className="container py-10 mx-auto mb-10">
         <HomeMenu heThongRapChieu={heThongRapChieu} />
       </div>

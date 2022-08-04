@@ -61,37 +61,44 @@ export default function Header() {
     </Menu>
   );
   return (
-    <header className="bg-opacity-40 bg-black text-lg text-white fixed w-full z-10">
+    <header className=" bg-white w-full z-10 ">
       <div className=" flex justify-between items-center mx-10 h-14 ">
         <NavLink
           to="/"
-          aria-label="Back to homepage"
+          aria-label="Homepage"
           className="flex items-center "
         >
-          <img src="./images/logo.png" style={{ width: 140 }} alt="logo" />
+          <img src="./images/logo cepheus.png" style={{ width: 100 }} alt="logo" />
         </NavLink>
+<ul className="items-stretch hidden space-x-5 lg:flex">
+  <li className="flex self-center ">
+    <a rel="noopener noreferrer" href="/home" className="flex items-center px-6  border-b-2 dark:border-transparent">Home</a>
+  </li>
+  <li className="flex">
+  <a rel="noopener noreferrer" href="/home" className="flex items-center px-6  border-b-2 dark:border-transparent">Lịch Chiếu</a>
+  </li>
+  <li className="flex">
+    <a a rel="noopener noreferrer" href="/home" className="flex items-center px-6  border-b-2 dark:border-transparent">Cụm rạp</a>
+  </li>
+</ul>
 
         <div className="">
           {_.isEmpty(userLogin) ? (
             <Fragment>
-              <NavLink to ="/register"
-                className="font-bold self-center pr-10"
-              >
-                Sign up
+              <NavLink to="/login" className="font-bold self-center pr-10 ">
+                Đăng nhập
               </NavLink>
-              <NavLink to ="/login"
-                className="font-bold self-center pr-10"
-              >
-                Sign in
+              <NavLink to="/register" className="font-bold self-center pr-10">
+                Đăng ký
               </NavLink>
             </Fragment>
           ) : (
             <Dropdown overlay={menu}>
               <button
-                className="ant-dropdown-link font-bold"
+                className="ant-dropdown-link font-bold text-red"
                 onClick={(e) => e.preventDefault()}
               >
-                Hello {userLogin.taiKhoan} <DownOutlined />
+                Xin chào {userLogin.taiKhoan} <DownOutlined />
               </button>
             </Dropdown>
           )}

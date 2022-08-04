@@ -17,7 +17,6 @@ export default class Demo extends React.PureComponent {
     return this.props.heThongRapChieu?.map((heThongRap, index) => {
       let { tabPosition } = this.state;
       return (
-
         <TabPane
           style={{ height: "600px" }}
           tab={
@@ -30,6 +29,7 @@ export default class Demo extends React.PureComponent {
           }
           key={index}
         >
+        <h1>CỤM RẠP</h1>
           <Tabs style={{height:"550px"}} tabPosition={tabPosition}>
             {heThongRap.lstCumRap?.map((cumRap, index) => {
               return (
@@ -54,6 +54,7 @@ export default class Demo extends React.PureComponent {
                   }
                   key={index}
                 >
+                <h1>LỊCH CHIẾU</h1>
                   {cumRap.danhSachPhim.slice(0, 3).map((phim, index) => {
                     return (
                       <div key={index}>
@@ -76,7 +77,7 @@ export default class Demo extends React.PureComponent {
 
                             <div className="ml-2">
                               <h1 className="text-lg ">
-                                <span className="text-white text-sm bg-yellow-400 px-1 py-0.5 mr-2 rounded-md">
+                                <span className="text-white text-sm bg-red-600 px-1 py-0.5 mr-2 rounded-md">
                                   C13
                                 </span>
                                 {phim.tenPhim}
@@ -88,7 +89,7 @@ export default class Demo extends React.PureComponent {
                                   .map((lichChieu, index) => {
                                     return (
                                       <NavLink
-                                        className="mua-ve hover:text-yellow-500"
+                                        className="mua-ve hover:text-red-600"
                                         to={`/checkout/${lichChieu.maLichChieu}`}
                                         key={index}
                                       >
